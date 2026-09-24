@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Museum</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="canvas-wrap"></div>
+<div id="scroll-container"><div id="scroll-spacer"></div></div>
+<div id="intro-veil"></div>
+<div id="black-veil"></div>
+
+<div class="overlay" id="hero">
+  <div class="hero-title">MUSEUM OF OUR HISTORY</div>
+  <div class="hero-sub">A JOURNEY THROUGH HISTORY, ART, AND THE STORIES THAT SHAPED US</div>
+</div>
+
+<div class="plaque" id="plaque">
+  <div class="t"></div><div class="a"></div><div class="d"></div>
+</div>
+
+<div id="tap-hint">TAP AN ARTWORK TO READ</div>
+
+<div id="letter-modal">
+  <div class="letter-card">
+    <button id="letter-close" aria-label="Close letter">CLOSE ✕</button>
+    <div class="letter-grid">
+      <div class="letter-photo-wrap" id="letter-photo-wrap">
+        <div class="letter-photo-frame">
+          <img id="letter-img" class="letter-photo" src="" alt="Memory Photo" />
+        </div>
+      </div>
+      <div class="letter-content">
+        <div class="lt" id="letter-title"></div>
+        <div class="la" id="letter-sub"></div>
+        <div class="lb" id="letter-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="message-layer">
+  <div class="msg-line" id="m1">Now that we've scrolled through history&hellip;</div>
+  <div class="msg-line" id="m2">&hellip;why don't we make some more?</div>
+  <div class="msg-line" id="m3">&hellip;but officially.</div>
+  <div class="msg-line" id="m4">After everything we've been through&hellip;</div>
+  <div class="msg-line" id="m5">I'd like to create the next chapter with you.</div>
+  <div id="question">Will you be my girlfriend?</div>
+  <div id="buttons">
+    <button id="btnYes">YES</button>
+    <button id="btnOf">OF COURSE</button>
+  </div>
+  <div id="final-msg">Then let's make some history together.</div>
+</div>
+
+<div id="scroll-hint">SCROLL</div>
+<div id="particles"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
