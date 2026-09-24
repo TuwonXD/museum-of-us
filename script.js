@@ -393,16 +393,22 @@
 
   // ---------- Camera path ----------
   var path = [
-    {p:[0,1.6,6],  l:[0,2,0]},
-    {p:[0,1.6,0],  l:[0,2,-4]},
-    {p:[-2,1.7,-6], l:[-6.85,3,-4]},
-    {p:[2,1.7,-11], l:[6.85,3,-9]},
-    {p:[-2,1.7,-16], l:[-6.85,3,-14]},
-    {p:[2,1.7,-21], l:[6.85,3,-19]},
-    {p:[-2,1.7,-26], l:[-6.85,3,-24]},
-    {p:[2,1.7,-31], l:[6.85,3,-29]},
-    {p:[0,1.6,-36], l:[0,2,farZ-4]},
-    {p:[0,1.6,-40], l:[0,2,farZ-8]}
+    {p:[0, 1.6, 6],      l:[0, 1.8, 0]},
+    {p:[0, 1.6, 1],      l:[-3.5, 2.2, -4]},
+    {p:[-2.2, 1.7, -4],  l:[-6.85, 3.0, -4]},
+    {p:[0, 1.65, -6.5],  l:[3.5, 2.2, -9]},
+    {p:[2.2, 1.7, -9],   l:[6.85, 3.0, -9]},
+    {p:[0, 1.65, -11.5], l:[-3.5, 2.2, -14]},
+    {p:[-2.2, 1.7, -14], l:[-6.85, 3.0, -14]},
+    {p:[0, 1.65, -16.5], l:[3.5, 2.2, -19]},
+    {p:[2.2, 1.7, -19],  l:[6.85, 3.0, -19]},
+    {p:[0, 1.65, -21.5], l:[-3.5, 2.2, -24]},
+    {p:[-2.2, 1.7, -24], l:[-6.85, 3.0, -24]},
+    {p:[0, 1.65, -26.5], l:[3.5, 2.2, -29]},
+    {p:[2.2, 1.7, -29],  l:[6.85, 3.0, -29]},
+    {p:[0, 1.6, -33],    l:[0, 2.2, farZ-4]},
+    {p:[0, 1.6, -37],    l:[0, 2.5, farZ-4]},
+    {p:[0, 1.6, -39],    l:[0, 2.5, farZ-8]}
   ];
   function lerpV(a,b,t){ return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t]; }
   function cameraAt(t){
@@ -425,6 +431,10 @@
   ];
   var questionAt = 0.965, buttonsAt = 0.985;
 
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   var heroEl = document.getElementById('hero');
   var heroTitle = heroEl.querySelector('.hero-title');
   var heroSub = heroEl.querySelector('.hero-sub');
@@ -442,20 +452,20 @@
   function startIntro(){
     setTimeout(function(){
       if(heroTitle) heroTitle.classList.add('show');
-    }, 250);
+    }, 300);
 
     setTimeout(function(){
       if(heroSub) heroSub.classList.add('show');
-    }, 850);
+    }, 950);
 
     setTimeout(function(){
       if(introVeil) introVeil.classList.add('hidden');
-    }, 2400);
+    }, 2500);
 
     setTimeout(function(){
       introDone = true;
       if(scrollT < 0.04) scrollHint.classList.add('show');
-    }, 3800);
+    }, 4500);
   }
 
   function finishIntroQuickly(){
@@ -469,10 +479,11 @@
   }
 
   var scrollContainer = document.getElementById('scroll-container');
+  scrollContainer.scrollTop = 0;
   scrollContainer.addEventListener('scroll', function(){
     var max = scrollContainer.scrollHeight - scrollContainer.clientHeight;
     targetT = max>0 ? (scrollContainer.scrollTop / max) : 0;
-    if(targetT > 0.002) finishIntroQuickly();
+    if(targetT > 0.015) finishIntroQuickly();
   }, {passive:true});
 
   // ---------- Letter popups ----------
@@ -560,7 +571,7 @@
 
     // plaque near artworks
     if(t < galleryEnd){
-      var cz = cameraAt(t/galleryEnd*0.9+0.02).p[2];
+      var cz = cameraAt(Math.min(t/galleryEnd, 1) * 0.98 + 0.01).p[2];
       var near = nearestArtwork(cz);
       if(near){
         plaqueEl.style.opacity = 1;
