@@ -1,0 +1,1 @@
+var IMG_ORACION\")\nif ($pos -ge 0) {\n    $semi = $content.IndexOf(\";

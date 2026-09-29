@@ -18,43 +18,43 @@
   <div class="hero-sub">A JOURNEY THROUGH HISTORY, ART, AND THE STORIES THAT SHAPED US</div>
 </div>
 
-<div class="plaque" id="plaque">
-  <div class="t"></div><div class="a"></div><div class="d"></div>
-</div>
-
-<div id="tap-hint">TAP AN ARTWORK TO READ</div>
-
-<div id="letter-modal">
-  <div class="letter-card">
-    <button id="letter-close" aria-label="Close letter">CLOSE ✕</button>
-    <div class="letter-grid">
-      <div class="letter-photo-wrap" id="letter-photo-wrap">
-        <div class="letter-photo-frame">
-          <img id="letter-img" class="letter-photo" src="" alt="Memory Photo" />
-        </div>
-      </div>
-      <div class="letter-content">
-        <div class="lt" id="letter-title"></div>
-        <div class="la" id="letter-sub"></div>
-        <div class="lb" id="letter-body"></div>
-      </div>
-    </div>
+<div id="scroll-letter" class="scroll-letter-card">
+  <div class="sl-shimmer"></div>
+  <div class="sl-header">
+    <span class="sl-ornament">✦</span>
+    <span class="sl-tag">EXHIBIT LETTER</span>
+    <span class="sl-ornament">✦</span>
   </div>
+  <div class="sl-title" id="sl-title"></div>
+  <div class="sl-divider"></div>
+  <div class="sl-sub" id="sl-sub"></div>
+  <div class="sl-body" id="sl-body"></div>
 </div>
 
-<div id="message-layer">
+<div id="prelude-layer">
   <div class="msg-line" id="m1">Now that we've scrolled through history&hellip;</div>
   <div class="msg-line" id="m2">&hellip;why don't we make some more?</div>
   <div class="msg-line" id="m3">&hellip;but officially.</div>
   <div class="msg-line" id="m4">After everything we've been through&hellip;</div>
   <div class="msg-line" id="m5">I'd like to create the next chapter with you.</div>
-  <div id="question">Will you be my girlfriend?</div>
-  <div id="buttons">
-    <button id="btnYes">YES</button>
-    <button id="btnOf">OF COURSE</button>
-  </div>
-  <div id="final-msg">Then let's make some history together.</div>
 </div>
+
+<div id="proposal-space">
+  <div class="proposal-card">
+    <div class="proposal-ornament" id="proposal-ornament">✧ OUR NEXT CHAPTER ✧</div>
+    <div class="proposal-question" id="question">Will you be my girlfriend?</div>
+    <div class="proposal-buttons" id="buttons">
+      <button id="btnYes">YES</button>
+      <button id="btnNo">NO</button>
+    </div>
+    <div class="proposal-final" id="final-msg">
+      <div class="final-headline">touch move na ah, bawal na magbackdown 😉</div>
+      <div class="final-subtext">Then let's make more memories together. ♥</div>
+    </div>
+  </div>
+</div>
+
+<audio id="proposal-music" src="It Might Be You - Stephen Bishop (Saxophone Cover by Desmond Amos).mp3" preload="auto"></audio>
 
 <div id="scroll-hint">SCROLL</div>
 <div id="particles"></div>
